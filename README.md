@@ -1,6 +1,6 @@
-# MonProjetAngular
+# OPC-tuto-Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2 as part of an Openclassroom tutorial.
 
 ## Development server
 

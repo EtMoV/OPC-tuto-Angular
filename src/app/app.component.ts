@@ -1,10 +1,46 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { resolve, reject } from "q";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'mon-projet-angular';
+  isAuth = false;
+
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(() => {
+      resolve(date);
+    }, 2000);
+  });
+
+  appareils = [
+    {
+      name: "Machine à laver",
+      status: "allumé"
+    },
+    {
+      name: "Télévision",
+      status: "allumé"
+    },
+    {
+      name: "Ordinateur",
+      status: "éteint"
+    }
+  ];
+
+  constructor() {
+    setTimeout(() => {
+      this.isAuth = true;
+    }, 2000);
+  }
+
+  onAllumer() {
+    this.appareils.map(key => (key.status = "allumé"));
+  }
+  onEteindre() {
+    this.appareils.map(key => (key.status = "éteint"));
+  }
 }
